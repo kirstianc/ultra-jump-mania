@@ -26,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
         if(horizontalMove > 0 && !facingRight)
         {
             Flip();
+            facingRight = true;
         }
-
+        
         if (horizontalMove < 0 && facingRight)
         {
             Flip();
+            facingRight = false;
         }
-
+        
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Rotate(0f, 180f, 0f);
     }
-
+    
     // Move our character
     void FixedUpdate()
     {
