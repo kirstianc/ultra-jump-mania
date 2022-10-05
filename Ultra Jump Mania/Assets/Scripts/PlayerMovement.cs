@@ -6,10 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public ProjectileBehavior ProjectilePrefab;
+    public Transform LaunchOffset;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
-
+    bool facingRight = true;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +22,28 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
+        
+        if(horizontalMove > 0 && !facingRight)
+        {
+            Flip();
+        }
+
+        if (horizontalMove < 0 && facingRight)
+        {
+            Flip();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+        }
+    }
+
+    // Flip
+    
+    private void Flip()
+    {
+        transform.Rotate(0f, 180f, 0f);
     }
 
     // Move our character
