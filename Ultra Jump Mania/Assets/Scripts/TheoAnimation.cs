@@ -12,11 +12,13 @@ public class TheoAnimation : MonoBehaviour
     {
         th_animator = GetComponent<Animator>();
         
+        /*
         Enumerator waitFiveSeconds()
         {
             yield return new WaitForSeconds(5);
-            anim.Play("Idle");
+            th_animator.Play("Idle");
         }
+        */
     }
 
     // Update is called once per frame
