@@ -389,37 +389,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1059498489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1059498490}
-  m_Layer: 0
-  m_Name: LaunchOffset
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1059498490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059498489}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.38, y: -0.95, z: 0.15650332}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1822797932}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387341092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1125,11 @@ PrefabInstance:
     - target: {fileID: 7978465980955151431, guid: 213b81de53cf6c9449913d069107dd79, type: 3}
       propertyPath: LaunchOffset
       value: 
-      objectReference: {fileID: 1059498490}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978465980955151431, guid: 213b81de53cf6c9449913d069107dd79, type: 3}
+      propertyPath: LaunchOffset.x
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7978465980955151431, guid: 213b81de53cf6c9449913d069107dd79, type: 3}
       propertyPath: ProjectilePrefab
       value: 

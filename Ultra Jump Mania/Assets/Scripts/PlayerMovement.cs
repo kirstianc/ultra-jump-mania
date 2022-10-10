@@ -7,11 +7,16 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public ProjectileBehavior ProjectilePrefab;
-    public Transform LaunchOffset;
+    public Vector3 LaunchOffset;
     public float runSpeed = 40f;
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool facingRight = true;
+    private SpriteRenderer playerSpriteRenderer;
+    private float horizontalMove = 0f;
+    private bool jump = false;
+    private bool facingRight = true;
+
+    void Start() {
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,29 +28,26 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
         }
         
-        if(horizontalMove > 0 && !facingRight)
+        if(horizontalMove > 0 && facingRight==false)
         {
-            Flip();
+            playerSpriteRenderer.flipX = false;
             facingRight = true;
         }
         
-        if (horizontalMove < 0 && facingRight)
+        if (horizontalMove < 0 && facingRight==true)
         {
-            Flip();
+            playerSpriteRenderer.flipX = true;
             facingRight = false;
         }
         
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            if(facingRight){
+                Instantiate(ProjectilePrefab, transform.position+LaunchOffset, transform.rotation);
+            }else{
+                Instantiate(ProjectilePrefab, transform.position+(-LaunchOffset), transform.rotation);
+            }
         }
-    }
-
-    // Flip
-    
-    private void Flip()
-    {
-        transform.Rotate(0f, 180f, 0f);
     }
     
     // Move our character
