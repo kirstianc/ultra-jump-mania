@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private float horizontalMove = 0f;
     private bool jump = false;
-    private bool facingRight = true;
+    //private bool facingRight = true;
 
     void Start() {
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             anim.SetBool("jump", true);
+            anim.Update(1f);
         }else{
             anim.SetBool("jump", false);
         }
@@ -40,29 +41,10 @@ public class PlayerMovement : MonoBehaviour
         }else{
             anim.SetBool("running", false);
         }
-        /*
-        if(horizontalMove > 0 && facingRight==false)
-        {
-            playerSpriteRenderer.flipX = false;
-            facingRight = true;
-        }
-        
-        if (horizontalMove < 0 && facingRight==true)
-        {
-            playerSpriteRenderer.flipX = true;
-            facingRight = false;
-        }
-        */
+
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(ProjectilePrefab, transform.position+(-LaunchOffset), transform.rotation);
-            /*
-            if(facingRight){
-                Instantiate(ProjectilePrefab, transform.position+LaunchOffset, transform.rotation);
-            }else{
-                Instantiate(ProjectilePrefab, transform.position+(-LaunchOffset), transform.rotation);
-            }
-            */
         }
     }
     
@@ -71,6 +53,5 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
-
     }
 }
