@@ -13,7 +13,7 @@ public class PlayerLife : MonoBehaviour
     {
         anim = GetComponent<Animator>();    
         rb = GetComponent<Rigidbody2D>();
-        //StartCoroutine(DeathCheckCoroutine());
+        StartCoroutine(DeathCheckCoroutine());
         dead = false;
     }
     
@@ -21,6 +21,7 @@ public class PlayerLife : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("insta_death")){
             Die();
+            dead=true;
         }
     }
 
@@ -33,12 +34,12 @@ public class PlayerLife : MonoBehaviour
     private void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-/*
-    private IEnumerator DeathCheckCoroutine(){
+
+    IEnumerator DeathCheckCoroutine(){
         if(dead){
-            yield new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2);
             RestartLevel();
         }
     }
-    */
+    
 }
