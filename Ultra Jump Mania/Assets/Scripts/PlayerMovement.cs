@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private float horizontalMove = 0f;
     private bool jump = false;
-    //private bool facingRight = true;
 
     void Start() {
+        controller = GetComponent<CharacterController2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
     }
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProjectilePrefab, transform.position+(-LaunchOffset), transform.rotation);
+            Instantiate(ProjectilePrefab, transform.position+(LaunchOffset), transform.rotation);
         }
     }
     

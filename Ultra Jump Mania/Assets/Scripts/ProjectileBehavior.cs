@@ -9,7 +9,12 @@ public class ProjectileBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * Time.deltaTime * Speed;    
+        if(transform.rotation.y == 0){
+            transform.Translate(transform.right * Time.deltaTime * Speed);
+        }else{
+            transform.Translate(transform.right * Time.deltaTime * Speed * -1);
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

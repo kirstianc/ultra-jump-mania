@@ -21,14 +21,13 @@ public class PlayerLife : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("insta_death")){
             Die();
-            dead=true;
         }
     }
 
     private void Die(){
-        anim.SetTrigger("death");
         dead=true;
         rb.bodyType= RigidbodyType2D.Static;
+        StartCoroutine(DeathCheckCoroutine());
     }
 
     private void RestartLevel(){
@@ -37,7 +36,7 @@ public class PlayerLife : MonoBehaviour
 
     IEnumerator DeathCheckCoroutine(){
         if(dead){
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             RestartLevel();
         }
     }
