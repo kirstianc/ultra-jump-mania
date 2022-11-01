@@ -26,12 +26,17 @@ public class PlayerLife : MonoBehaviour
 
     private void Die(){
         dead=true;
+        anim.SetTrigger("death");
         rb.bodyType= RigidbodyType2D.Static;
         StartCoroutine(DeathCheckCoroutine());
     }
 
     private void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public bool getDead(){
+        return dead;
     }
 
     IEnumerator DeathCheckCoroutine(){

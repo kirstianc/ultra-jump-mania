@@ -12,12 +12,14 @@ public class Finish : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.name == "Player"){
+        if(collision.gameObject.tag == "Player"){
             CompleteLevel();
+            Debug.Log("collision with player");
         }
     }
 
     private void CompleteLevel(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        SceneManager.LoadScene("level1",LoadSceneMode.Single);
+        Debug.Log("load level1");
     }
 }
