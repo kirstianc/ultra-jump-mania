@@ -6,20 +6,27 @@ public class trillSpawn : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject player;
-    public float spawnTime;
+    private float spawnTime;
+
+    private Quaternion rotation;
+
+    void Start(){
+        spawnTime = 2f;
+    }
 
     void Update()
     {
         spawnTime -= Time.deltaTime;
 
         if(spawnTime<=0f){
-            spawnTime=4.0f;
-            Instantiate(prefab, v3random(), player.transform.rotation.Euler(0,90,0));
+            spawnTime=2.0f;
+            rotation=player.transform.rotation*Quaternion.Euler(0,0,90);
+            Instantiate(prefab, v3random(), rotation);
         }   
     }
 
     Vector3 v3random(){
-        return new Vector3(player.transform.position.x + 5, Random.Range(-5, 5), player.transform.position.z);
+        return new Vector3(player.transform.position.x+5, Random.Range(-3, 3), player.transform.position.z);
     }
 
 }
