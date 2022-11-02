@@ -20,6 +20,13 @@ public class trillMovement : MonoBehaviour
         Move(-.5f);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Edge")||collision.gameObject.CompareTag("Default")||collision.gameObject.CompareTag("ground")){
+            Destroy(gameObject);
+        }
+    }
+
     public void Move(float move)
 	{
 		Vector3 targetVelocity = new Vector2(move * 10f, 0);
