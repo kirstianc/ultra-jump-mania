@@ -26,7 +26,7 @@ public class trillSpawn : MonoBehaviour
     }
 
     Vector3 v3random(){
-        return new Vector3(player.transform.position.x+5, player.transform.position.y+Random.Range(-3, 3), player.transform.position.z);
+        return new Vector3(player.transform.position.x+8, player.transform.position.y+Random.Range(-3, 3), player.transform.position.z);
     }
 
 }

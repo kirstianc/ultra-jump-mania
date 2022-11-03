@@ -11,7 +11,12 @@ public class GameManager : MonoBehaviour
     private GameObject panel;
 
     public void StartGame(){
+        Time.timeScale=1;
         SceneManager.LoadScene("tutorial",LoadSceneMode.Single);
+    }
+
+    public void MainMenu(){
+        SceneManager.LoadScene("Title",LoadSceneMode.Single);
     }
 
     public void ExitGame(){

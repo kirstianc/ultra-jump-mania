@@ -78,9 +78,10 @@ GameObject:
   - component: {fileID: 7978465980955151451}
   - component: {fileID: 7978465980955151431}
   - component: {fileID: 7978465980955151428}
+  - component: {fileID: 1822797940}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,22 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d26c2c269409448babbf0eac166afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 600
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_GroundCheck: {fileID: 7978465980182860695}
-  m_CeilingCheck: {fileID: 7978465980904189410}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  jumpPower: 600
+  movementSmoothing: 0.05
+  groundCheck: {fileID: 7978465980182860695}
 --- !u!50 &7978465980955151448
 Rigidbody2D:
   serializedVersion: 4
@@ -258,9 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7978465980955151449}
-  ProjectilePrefab: {fileID: 0}
-  LaunchOffset: {fileID: 0}
+  ProjectilePrefab: {fileID: 6185624560602168741, guid: 97f77bc7c5efa024595968b51e01d07b, type: 3}
+  LaunchOffset: {x: 0.4, y: 0, z: 0}
   runSpeed: 80
+  menu: {fileID: 0}
 --- !u!95 &7978465980955151428
 Animator:
   serializedVersion: 4
@@ -271,7 +260,7 @@ Animator:
   m_GameObject: {fileID: 7978465980955151452}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd43a60f648dbf74f88e8216c472bdb1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14c462329e1b17c49b0cf295f641799e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -281,3 +270,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1822797940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978465980955151452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4875407373fd43245ac341dbcb0b964a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 1345537915}
   - component: {fileID: 1345537914}
   - component: {fileID: 1345537913}
-  - component: {fileID: 1345537916}
   m_Layer: 5
   m_Name: exitButton
   m_TagString: Untagged
@@ -562,19 +561,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345537911}
   m_CullTransparentMesh: 1
---- !u!114 &1345537916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345537911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8fadf09e3b95a1418ac3eb78f30a2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonType: exit
 --- !u!1 &1467904763
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +664,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1625201406
 Canvas:
   m_ObjectHideFlags: 0
@@ -688,7 +674,7 @@ Canvas:
   m_GameObject: {fileID: 1625201403}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -708,8 +694,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625201403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.028735632, y: 0.028735632, z: 0.028735632}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 675995833}
@@ -722,8 +708,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 619.50006, y: 348}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1973024888
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +802,6 @@ GameObject:
   - component: {fileID: 2037289422}
   - component: {fileID: 2037289421}
   - component: {fileID: 2037289420}
-  - component: {fileID: 2037289423}
   m_Layer: 5
   m_Name: startButton
   m_TagString: Untagged
@@ -939,19 +924,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037289418}
   m_CullTransparentMesh: 1
---- !u!114 &2037289423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037289418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8fadf09e3b95a1418ac3eb78f30a2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonType: start
 --- !u!1 &2122814597
 GameObject:
   m_ObjectHideFlags: 0

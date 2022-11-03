@@ -22,14 +22,14 @@ public class trillMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Edge")||collision.gameObject.CompareTag("Default")||collision.gameObject.CompareTag("ground")){
+        if(collision.gameObject.CompareTag("Edge")||collision.gameObject.CompareTag("Default")||collision.gameObject.CompareTag("ground")||collision.gameObject.CompareTag("projectile")){
             Destroy(gameObject);
         }
     }
 
     public void Move(float move)
 	{
-		Vector3 targetVelocity = new Vector2(move * 10f, 0);
+		Vector3 targetVelocity = new Vector2(move * 6f, 0);
 		rb2d.velocity = targetVelocity;
 	}
 }

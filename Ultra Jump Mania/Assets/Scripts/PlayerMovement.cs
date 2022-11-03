@@ -9,10 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public ProjectileBehavior ProjectilePrefab;
     public Vector3 LaunchOffset;
     public float runSpeed = 40f;
+    public GameObject menu;
+
     private Animator anim;
     private SpriteRenderer playerSpriteRenderer;
     private float horizontalMove = 0f;
     private bool jump = false;
+    private bool menuShowing = false;
 
     void Start() {
         controller = GetComponent<CharacterController2D>();
@@ -46,12 +49,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(ProjectilePrefab, transform.position+(LaunchOffset), transform.rotation);
         }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            menuShowing = !menuShowing;
+            menu.SetActive(menuShowing);
+            if(menuShowing){
+                Time.timeScale=0;
+            }else{
+                Time.timeScale=1;
+            }
+        }
     }
     
     // Move our character
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
 }
